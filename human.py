@@ -8,11 +8,11 @@ class Human(Player):
         
     def shoot(self):
         print("")
-        print("Select 0 for Rock")
-        print("Select 1 for Paper")
-        print("Select 2 for Scissors")
-        print("Select 3 for Lizard")
-        print("Select 4 for Spock")
+        print("Select 0 for Rock 🪨")
+        print("Select 1 for Paper 📜")
+        print("Select 2 for Scissors ✂️")
+        print("Select 3 for Lizard 🦎")
+        print("Select 4 for Spock 🖖")
         print("")
         user_input=False
         counter = 0
@@ -22,19 +22,19 @@ class Human(Player):
                 choose_shoot = int(shoot_input)
                 if choose_shoot <5 and counter < 5:
                     if choose_shoot==0:
-                        print(f"{self.human_player} chooses Rock.")
+                        print(f"{self.human_player} chooses Rock 🪨.")
                         return("Rock")
                     elif choose_shoot==1:
-                        print(f"{self.human_player} chooses Paper.")
+                        print(f"{self.human_player} chooses Paper 📜.")
                         return ("Paper")
                     elif choose_shoot==2:
-                        print(f"{self.human_player} chooses Scissors.")
+                        print(f"{self.human_player} chooses Scissors ✂️.")
                         return ("Scissors")
                     elif choose_shoot==3:
-                        print(f"{self.human_player} chooses Lizard.")
+                        print(f"{self.human_player} chooses Lizard 🦎.")
                         return ("Lizard")
                     elif choose_shoot==4:
-                        print(f"{self.human_player} chooses Spock.")
+                        print(f"{self.human_player} chooses Spock 🖖.")
                         return ("Spock")
                     user_input=True
                 elif counter > 4:

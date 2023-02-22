@@ -12,7 +12,7 @@ class Game:
         print('Welcome to Rock-Paper-Scissors-Lizard-Spock!')
 
     def display_rules(self):
-        print(f'Here are the rules!\nGiven the five gestures: \nRock, Paper, Scissors, Lizard, Spock\nThe given player selects one gesture per round: This game is best two out of three.\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n')
+        print(f'Here are the rules!\nGiven the five gestures: \nRock 🪨, Paper 📜, Scissors✂️, Lizard🦎, Spock🖖\nThe given player selects one gesture per round: This game is best two out of three.\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n')
     
     def rounds(self):
         user_input=input('Single or Multi Player? (1) for Single Player, (2) for Multiplayer: ')
