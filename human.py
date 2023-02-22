@@ -21,14 +21,19 @@ class Human(Player):
                 if choose_shoot <5:
                     if choose_shoot==0:
                         print(f"{self.human_player} chooses Rock.")
+                        return("Rock")
                     elif choose_shoot==1:
                         print(f"{self.human_player} chooses Paper.")
+                        return ("Paper")
                     elif choose_shoot==2:
                         print(f"{self.human_player} chooses Scissors.")
+                        return ("Scissors")
                     elif choose_shoot==3:
                         print(f"{self.human_player} chooses Lizard.")
+                        return ("Lizard")
                     elif choose_shoot==4:
                         print(f"{self.human_player} chooses Spock.")
+                        return ("Spock")
                     user_input=True
                 else:
                     print('invalid range please choose between 0 and 4! ')
