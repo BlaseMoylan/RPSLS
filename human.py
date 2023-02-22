@@ -7,13 +7,12 @@ class Human(Player):
         super().__init__()
         
     def shoot(self):
-        # If we can let's make this 1-5
         print("")
         print("Select 0 for Rock")
         print("Select 1 for Paper")
         print("Select 2 for Scissors")
         print("Select 3 for Lizard")
-        print("Select 4 Spock")
+        print("Select 4 for Spock")
         print("")
         user_input=False
         counter = 0
