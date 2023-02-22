@@ -8,4 +8,5 @@ class AI(Player):
     
     def choose_gesture(self):
         ai_selection = random.choice(self.shoot_list)
+        print(ai_selection)
         return ai_selection
