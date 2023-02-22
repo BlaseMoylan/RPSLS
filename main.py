@@ -1,2 +1,3 @@
-# main RPSLS
-#here it is 
+from game import Game
+game1=Game()
+game1.run_game()
