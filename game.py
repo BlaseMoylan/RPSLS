@@ -10,15 +10,15 @@ class Game:
         self.rounds()
         
     def display_welcome(self):
-        print('Welcome to RPSLS!')
+        print('Welcome to Rock-Paper-Scissors-Lizard-Spock!')
 
     def display_rules(self):
-        print(f'Here are the rules!\ngiven the five gestures: \n(Rock,Paper,Scissors,Lizard,Spock)\nthe given player selects one per round: this game is best out of three.\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n')
+        print(f'Here are the rules!\nGiven the five gestures: \nRock, Paper, Scissors, Lizard, Spock\nThe given player selects one gesture per round: This game is best two out of three.\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n')
     
     def rounds(self):
-        user_input=input('Single or Multi Player?(1 for single, 2 for multi)')
+        user_input=input('Single or Multi Player? (1) for Single Player, (2) for Multiplayer: ')
         if user_input=='1':
-            self.player1=Human(input('what is the player name? '))
+            self.player1=Human(input('What is the player name? '))
             player1_name=self.player1.human_player
             ai_name=self.ai.name
             p1=0
@@ -29,17 +29,17 @@ class Game:
                 win=self.which_gestor_wins(player1_shoot,ai)
                 if player1_shoot==win:
                     p1+=1
-                    print(f'round winner: {player1_name}')
+                    print(f'Round winner: {player1_name}')
                 else:
                     p2+=1
-                    print(f'round winner: {ai_name}')
+                    print(f'Round winner: {ai_name}')
             if p1==2:
-                print(f'the winner is: {player1_name}')
+                print(f'The winner is: {player1_name}')
             else:
-                print(f'the winner is: {ai_name}')
+                print(f'The winner is: {ai_name}')
         if user_input=='2':
-            self.player1=Human(input('what is player one name? '))
-            self.player2=Human(input('what is player two name? '))
+            self.player1=Human(input("What is player one's name? "))
+            self.player2=Human(input("What is player two's name? "))
             player1_name=self.player1.human_player
             player2_name=self.player2.human_player
             p1=0
@@ -50,15 +50,15 @@ class Game:
                 win=self.which_gestor_wins(player1_shoot,player2_shoot)
                 if player1_shoot==win:
                     p1+=1
-                    print(f'round winner: {player1_name}')
+                    print(f'Round winner: {player1_name}')
                 else:
                     p2+=1
-                    print(f'round winner: {player2_name}')
+                    print(f'Round winner: {player2_name}')
 
             if p1==2:
-                print(f'the winner is: {player1_name}')
+                print(f'The winner is: {player1_name}')
             else:
-                print(f'the winner is: {player2_name}')
+                print(f'The winner is: {player2_name}')
 
     def which_gestor_wins(self,player1,player2):
         if player1=='Rock'and (player2=='Paper' or player2 =='Spock'):
