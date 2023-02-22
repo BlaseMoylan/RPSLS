@@ -55,15 +55,15 @@ class Game:
                 print(f'the winner is: {player2_name}')
 
     def which_gestor_wins(self,player1,player2):
-        if player1=='rock'and player2=='paper' or player2 =='spock':
+        if player1=='Rock'and player2=='Paper' or player2 =='Spock':
             return player2
-        elif player1=='scissors' and player2=='spock' or player2=='rock':
+        elif player1=='Scissors' and player2=='Spock' or player2=='Rock':
             return player2
-        elif player1=='paper' and player2=='lizard' or player2=='scissors':
+        elif player1=='Paper' and player2=='Lizard' or player2=='Scissors':
             return player2
-        elif player1=='lizard' and player2=='rock' or player2=='scissors':
+        elif player1=='Lizard' and player2=='Rock' or player2=='Scissors':
             return player2
-        elif player1=='spock' and player2=='lizard' or player2=='paper':
+        elif player1=='Spock' and player2=='Lizard' or player2=='Paper':
             return player2
         else:
             return player1
