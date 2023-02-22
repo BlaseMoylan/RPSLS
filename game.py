@@ -19,16 +19,30 @@ class Game:
     
     def rounds(self):
         user_input=input('Single or Multi Player?(1 for single, 2 for multi)')
-        # if user_input==1:
-        #     pass
+        if user_input==1:
+            player1_name=self.player1.name
+            ai_name=self.ai.name
+            p1=0
+            p2=0
+            while p1!=2 and p2!=2:
+                player1_shoot=self.shoot()
+                ai=self.ai.choose_gesture()
+                if player1_shoot==self.which_gestor_wins(player1_shoot,ai):
+                    p1=+1
+                else:
+                    p2+=1
+            if p1==2:
+                print(f'the winner is: {player1_name}')
+            else:
+                print(f'the winner is: {ai_name}')
         if user_input=='2':
             player1_name=self.player1.name
             player2_name=self.player2.name
             p1=0
             p2=0
             while p1!=2 and p2!=2:
-                player1_shoot=self.
-                player2_shoot=input(f'select one of the following: {self.gestures}')
+                player1_shoot=self.shoot()
+                player2_shoot=self.shoot()
                 if player1_shoot==self.which_gestor_wins(player1_shoot,player2_shoot):
                     p1+=1
                 else:
