@@ -15,12 +15,12 @@ class Human(Player):
         print("Select 4 for Spock 🖖")
         print("")
         user_input=False
-        counter = 0
-        while user_input == False and counter < 6:
+        counter=0
+        while user_input == False:
             shoot_input=input("Which option do you want to choose? ")
             if shoot_input.isnumeric():
                 choose_shoot = int(shoot_input)
-                if choose_shoot <5 and counter < 5:
+                if choose_shoot <5 and counter < 4:
                     if choose_shoot==0:
                         print(f"{self.human_player} chooses Rock 🪨.")
                         return("Rock")
@@ -37,12 +37,20 @@ class Human(Player):
                         print(f"{self.human_player} chooses Spock 🖖.")
                         return ("Spock")
                     user_input=True
-                elif counter > 4:
-                    print(f"{self.human_player} has been assigned {random.choice(self.shoot_list)}!")
-                    return (random.choice(self.shoot_list))
+                elif counter>3:
+                    self.random_choice()
+                    user_input=True
                 else:
                     print('invalid range please choose between 0 and 4! ')
                     counter += 1
+            elif counter > 3:
+                self.random_choice()
+                user_input=True
             else:
                 print('You did not enter a valid input! ')
-                counter += 1
+                counter+=1
+    
+    def random_choice(self):
+            print('You did not enter a valid input! ')
+            print(f"{self.human_player} has been assigned {random.choice(self.shoot_list)}!")
+            return (random.choice(self.shoot_list))

@@ -15,20 +15,25 @@ class Game:
         print(f'Here are the rules!\nGiven the five gestures: \nRock 🪨, Paper 📜, Scissors✂️, Lizard🦎, Spock🖖\nThe given player selects one gesture per round: This game is best two out of three.\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n')
     
     def rounds(self):
-        user_input=input('Single or Multi Player? (1) for Single Player, (2) for Multiplayer: ')
-        if user_input=='1':
-            self.player1=Human(input('what is the player name? '))
-            self.player2=AI()
-            player1_name=self.player1.human_player
-            ai_name=self.player2.name
-            self.round(player1_name,ai_name)
-            
-        elif user_input=='2':
-            self.player1=Human(input('what is player one name? '))
-            self.player2=Human(input('what is player two name? '))
-            player1_name=self.player1.human_player
-            player2_name=self.player2.human_player
-            self.round(player1_name,player2_name)
+        user=False
+        while user==False:
+            user_input=input('Single or Multi Player? (1) for Single Player, (2) for Multiplayer: ')
+            if user_input=='1':
+                self.player1=Human(input('what is the player name? '))
+                self.player2=AI()
+                player1_name=self.player1.human_player
+                ai_name=self.player2.name
+                self.round(player1_name,ai_name)
+                user=True
+            elif user_input=='2':
+                self.player1=Human(input('what is player one name? '))
+                self.player2=Human(input('what is player two name? '))
+                player1_name=self.player1.human_player
+                player2_name=self.player2.human_player
+                self.round(player1_name,player2_name)
+                user=True
+            else:
+                print('only put in 1 or 2!! 🤦‍♂️(nothing else is valid)🤦‍♂️')
 
     def which_gestor_wins(self,player1,player2):
         if player1=='Rock'and (player2=='Paper' or player2 =='Spock'):
@@ -54,14 +59,14 @@ class Game:
             if player1_shoot!=player2_shoot:
                 if player1_shoot==win:
                     p1+=1
-                    print(f'round winner: {player1_name}')
+                    print(f'round winner: 🏆{player1_name}')
                 else:
                     p2+=1
-                    print(f'round winner: {player2_name}')
+                    print(f'round winner: 🏆{player2_name}')
             else:
                 print('Tie!')
 
         if p1==2:
-            print(f'the winner is: {player1_name}')
+            print(f'the winner is: 🏆{player1_name}🏆')
         else:
-            print(f'the winner is: {player2_name}')
+            print(f'the winner is: 🏆{player2_name}🏆')
