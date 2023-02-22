@@ -6,7 +6,7 @@ class AI(Player):
         self.name = "SkyNet"
         super().__init__()
     
-    def choose_gesture(self):
+    def shoot(self):
         ai_selection = random.choice(self.shoot_list)
         print(ai_selection)
         return ai_selection
